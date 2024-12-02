@@ -4,6 +4,7 @@ public class FlappyBirdController : MonoBehaviour
 {
     // Variables de configuration
     public float flapForce = 5f;  // Force du saut
+    public float MinRotation = -30f;
     public float maxRotation = 30f;  // Angle maximum d'inclinaison vers le haut
     public float fallRotationSpeed = 10f;  // Vitesse d'inclinaison vers le bas
 
@@ -26,7 +27,11 @@ public class FlappyBirdController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, rb.linearVelocity.y * fallRotationSpeed);
+        // Calcule la rotation en fonction de la vitesse verticale
+        float rotationZ = Mathf.Clamp(rb.linearVelocity.y * fallRotationSpeed, MinRotation, maxRotation);
+
+        // Applique la rotation en conservant une rotation 2D (seulement sur Z)
+        transform.rotation = Quaternion.Euler(0, 0, rotationZ);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
