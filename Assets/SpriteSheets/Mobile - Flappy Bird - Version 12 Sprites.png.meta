@@ -1550,7 +1550,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_55
+      name: Player_2
       rect:
         serializedVersion: 2
         x: 114
@@ -1594,7 +1594,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_57
+      name: Player_3
       rect:
         serializedVersion: 2
         x: 114
@@ -2056,7 +2056,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_78
+      name: Player_1
       rect:
         serializedVersion: 2
         x: 86
@@ -2162,6 +2162,9 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_81: 1460629197
       OverText: 5955124824224392516
       PlayBtn: 3255952901831296901
+      Player_1: -3307974742545668543
+      Player_2: -7390568835900721232
+      Player_3: 5612758388853481413
       UpPipe: 3869963733588150954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
