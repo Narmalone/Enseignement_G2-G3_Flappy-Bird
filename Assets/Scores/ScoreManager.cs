@@ -35,6 +35,7 @@ public class ScoreManager : MonoBehaviour
         TryUpdateHighScore();
     }
 
+    //Fonction pour mettre à jour le score
     public void UpdateScore()
     {
         PlayerScore++;
