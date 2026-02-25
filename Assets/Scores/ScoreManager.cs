@@ -21,6 +21,28 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentScoreTxt;
     [SerializeField] private TextMeshProUGUI _bestScoreTxt;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        _bestScoreTxt.text = PlayerPrefs.GetInt(HIGHSCORE_KEY, 0).ToString();
+        TryUpdateHighScore();
+    }
+
+    public void UpdateScore()
+    {
+        PlayerScore++;
+        _currentScoreTxt.text = PlayerScore.ToString();
+        OnScoreChanged?.Invoke();
+        TryUpdateHighScore();
+    }
+
     public void TryUpdateHighScore()
     {
         if(PlayerScore > PlayerPrefs.GetInt(HIGHSCORE_KEY))
